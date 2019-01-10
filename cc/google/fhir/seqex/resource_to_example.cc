@@ -60,6 +60,7 @@ namespace google {
 namespace fhir {
 namespace seqex {
 
+using ::google::fhir::stu3::proto::Boolean;
 using ::google::fhir::stu3::proto::CodeableConcept;
 using ::google::fhir::stu3::proto::Coding;
 using ::google::fhir::stu3::proto::Date;
@@ -69,6 +70,7 @@ using ::google::fhir::stu3::proto::Extension;
 using ::google::fhir::stu3::proto::Id;
 using ::google::fhir::stu3::proto::Identifier;
 using ::google::fhir::stu3::proto::Instant;
+using ::google::fhir::stu3::proto::Integer;
 using ::google::fhir::stu3::proto::PositiveInt;
 using ::google::fhir::stu3::proto::Reference;
 using ::google::fhir::stu3::proto::String;
@@ -172,7 +174,25 @@ Status GetPreferredCode(const CodeableConcept& concept, string* result) {
     *result = absl::StrCat("cpt:" + code);
   } else if (ExtractCodeBySystem(concept, systems::kNdc, &code).ok()) {
     *result = absl::StrCat("ndc:" + code);
-
+  } else if (ExtractCodeBySystem(concept, systems::kRxNorm, &code).ok()) {
+    *result = absl::StrCat("rxnorm:" + code);
+  } else if (ExtractCodeBySystem(concept, systems::kSnomed, &code).ok()) {
+    *result = absl::StrCat("snomed:" + code);
+  } else if (ExtractCodeBySystem(concept, systems::kObservationCategory, &code)
+                 .ok()) {
+    *result = absl::StrCat("observation_category:" + code);
+  } else if (ExtractCodeBySystem(concept, systems::kClaimCategory, &code)
+                 .ok()) {
+    *result = absl::StrCat("claim_category:" + code);
+  } else if (ExtractCodeBySystem(concept, systems::kMaritalStatus, &code)
+                 .ok()) {
+    *result = absl::StrCat("marital_status:" + code);
+  } else if (ExtractCodeBySystem(concept, systems::kNUBCDischarge, &code)
+                 .ok()) {
+    *result = absl::StrCat("nubc_discharge:" + code);
+  } else if (ExtractCodeBySystem(concept, systems::kLanguage, &code)
+                 .ok()) {
+    *result = absl::StrCat("language:" + code);
   } else if (ExtractCodeBySystem(concept, systems::kDischargeDisposition, &code)
                  .ok()) {
     *result = absl::StrCat("discharge_disposition:" + code);
@@ -192,12 +212,6 @@ Status GetPreferredCode(const CodeableConcept& concept, string* result) {
 
 }  // namespace
 
-string GetPreferredCodeOrDie(const CodeableConcept& concept) {
-  string code;
-  CHECK(GetPreferredCode(concept, &code).ok());
-  return code;
-}
-
 string GetCode(const Coding& coding) {
   CodeableConcept concept;
   *concept.add_coding() = coding;
@@ -213,10 +227,18 @@ void AddCodeableConceptToExample(
     const CodeableConcept& concept, const string& name,
     ::tensorflow::Example* example, std::set<string>* tokenize_feature_set,
     const std::set<string>& add_tokenize_feature_set, bool enable_attribution) {
+  string code;
+  Status code_status = GetPreferredCode(concept, &code);
+  if (!code_status.ok()) {
+    // Ignore the code that we do not recognize.
+    LOG(INFO) << "Unable to handle the codeable concept: "
+              << code_status.error_message();
+    return;
+  }
   // Codeable concepts are emitted using the preferred coding systems.
   (*example->mutable_features()->mutable_feature())[name]
       .mutable_bytes_list()
-      ->add_value(GetPreferredCodeOrDie(concept));
+      ->add_value(code);
   if (concept.has_text()) {
     const string full_name = absl::StrCat(name, ".text");
     if (FLAGS_tokenize_code_text_features) {
@@ -352,6 +374,20 @@ void MessageToExample(const google::protobuf::Message& message, const string& pr
               tokenize_feature_set, add_tokenize_feature_set, name,
               xhtml.value(), example, enable_attribution);
         } else if (field->message_type()->full_name() ==
+                   Boolean::descriptor()->full_name()) {
+          Boolean boolean;
+          boolean.CopyFrom(child);
+          (*example->mutable_features()->mutable_feature())[name]
+              .mutable_bytes_list()
+              ->add_value(boolean.value() ? "true" : "false");
+        } else if (field->message_type()->full_name() ==
+                   Integer::descriptor()->full_name()) {
+          Integer integer;
+          integer.CopyFrom(child);
+          (*example->mutable_features()->mutable_feature())[name]
+              .mutable_int64_list()
+              ->add_value(integer.value());
+        } else if (field->message_type()->full_name() ==
                    PositiveInt::descriptor()->full_name()) {
           PositiveInt positive_int;
           positive_int.CopyFrom(child);
@@ -404,9 +440,8 @@ void MessageToExample(const google::protobuf::Message& message, const string& pr
           MessageToExample(child, name, example, enable_attribution);
         }
       } else {
-        LOG(FATAL) << "Unable to handle field " << name
-                   << " in message of type "
-                   << message.GetDescriptor()->full_name();
+        LOG(INFO) << "Unable to handle field " << name << " in message of type "
+                  << message.GetDescriptor()->full_name();
       }
     }
   }

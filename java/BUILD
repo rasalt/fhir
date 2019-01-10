@@ -11,6 +11,7 @@ java_library(
     name = "stu3",
     srcs = glob(["src/main/java/com/google/fhir/stu3/*.java"]),
     deps = [
+        ":fhir_common",
         "//external:gson",
         "//external:guava",
         "//proto/stu3:annotations_java_proto",
@@ -37,6 +38,7 @@ java_library(
         ],
     ),
     deps = [
+        ":fhir_common",
         ":structure_definition_transformer",
         ":stu3",
         "//external:guava",
@@ -50,6 +52,32 @@ java_library(
         "@com_google_http_client_google_http_client_gson//jar",
         "@com_google_protobuf//:protobuf_java",
         "@com_google_protobuf//:protobuf_java_util",
+        "@org_apache_beam_beam_sdks_java_core//jar",
+    ],
+)
+
+java_library(
+    name = "beam-runners",
+    runtime_deps = [
+        "@com_fasterxml_jackson_core_jackson_annotations//jar",
+        "@com_fasterxml_jackson_core_jackson_core//jar",
+        "@com_fasterxml_jackson_core_jackson_databind//jar",
+        "@com_google_api_client_google_api_client//jar",
+        "@com_google_apis_google_api_services_clouddebugger//jar",
+        "@com_google_apis_google_api_services_dataflow//jar",
+        "@com_google_apis_google_api_services_storage//jar",
+        "@com_google_auth_google_auth_library_credentials//jar",
+        "@com_google_cloud_bigdataoss_util//jar",
+        "@joda_time_joda_time//jar",
+        "@org_apache_beam_beam_model_pipeline//jar",
+        "@org_apache_beam_beam_runners_direct_java//jar",
+        "@org_apache_beam_beam_runners_google_cloud_dataflow_java//jar",
+        "@org_apache_beam_beam_sdks_java_extensions_google_cloud_platform_core//jar",
+        "@org_apache_beam_beam_sdks_java_io_google_cloud_platform//jar",
+        "@org_apache_beam_beam_vendor_grpc_v1_13_1//jar",
+        "@org_slf4j_slf4j_api//jar",
+        "@org_slf4j_slf4j_simple//jar",
+        "@org_xerial_snappy_snappy_java//jar",
     ],
 )
 
@@ -77,6 +105,15 @@ java_binary(
     runtime_deps = [":examples"],
 )
 
+java_binary(
+    name = "SyntheaToTFRecords",
+    main_class = "com.google.fhir.examples.SyntheaToTFRecordsMain",
+    runtime_deps = [
+        ":beam-runners",
+        ":examples",
+    ],
+)
+
 java_library(
     name = "structure_definition_transformer",
     srcs = [
@@ -88,6 +125,23 @@ java_library(
         "@com_beust_jcommander//jar",
         "@com_google_http_client_google_http_client//jar",
         "@com_google_http_client_google_http_client_gson//jar",
+    ],
+)
+
+java_library(
+    name = "fhir_common",
+    srcs = [
+        "src/main/java/com/google/fhir/common/FhirVersion.java",
+    ],
+    deps = [
+        "//external:guava",
+        "//proto/stu3:codes_java_proto",
+        "//proto/stu3:datatypes_java_proto",
+        "//proto/stu3:extensions_java_proto",
+        "//proto/stu3:metadatatypes_java_proto",
+        "//proto/stu3:resources_java_proto",
+        "//proto/stu3:uscore_codes_java_proto",
+        "@com_google_protobuf//:protobuf_java",
     ],
 )
 
@@ -287,6 +341,7 @@ java_test(
     ],
     test_class = "com.google.fhir.stu3.ProtoFilePrinterTest",
     deps = [
+        ":fhir_common",
         ":stu3",
         "//external:gson",
         "//external:guava",
@@ -315,6 +370,7 @@ java_test(
     ],
     test_class = "com.google.fhir.stu3.ProtoGeneratorTest",
     deps = [
+        ":fhir_common",
         ":stu3",
         "//external:gson",
         "//external:guava",
