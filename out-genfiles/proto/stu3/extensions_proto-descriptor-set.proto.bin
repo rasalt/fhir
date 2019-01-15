@@ -1336,13 +1336,13 @@ value_date (2.google.fhir.stu3.proto.DateR	valueDate:‚ÀŸã¶šµŽ“1http://h
 id (2.google.fhir.stu3.proto.StringRidA
 value_string (2.google.fhir.stu3.proto.StringRvalueString:‚ÀŸã¶šµŽ“1http://hl7.org/fhir/StructureDefinition/Extension²þä—?http://hl7.org/fhir/StructureDefinition/valueset-workflowStatusB
 com.google.fhir.stu3.protoPbproto3
-·
+ø
 "proto/stu3/google_extensions.protogoogle.fhir.stu3.googleproto/stu3/annotations.protoproto/stu3/datatypes.proto"¡
 Base64BinarySeparatorStride.
 id (2.google.fhir.stu3.proto.StringRid?
 	extension (2!.google.fhir.stu3.proto.ExtensionR	extensionD
 	separator (2.google.fhir.stu3.proto.StringBðÐ‡ëR	separatorC
-stride (2#.google.fhir.stu3.proto.PositiveIntBðÐ‡ëRstride:…ÀŸã¶šµŽ“1http://hl7.org/fhir/StructureDefinition/Extension²þä—Bhttps://g.co/fhir/StructureDefinition/base64Binary-separatorStride"«
+stride (2#.google.fhir.stu3.proto.PositiveIntBðÐ‡ëRstride:…ÀŸã¶šµŽ“1http://hl7.org/fhir/StructureDefinition/Extension²þä—Bhttps://g.co/fhir/StructureDefinition/base64Binary-separatorStride"ì
 
 EventLabel.
 id (2.google.fhir.stu3.proto.StringRid?
@@ -1352,19 +1352,20 @@ EventLabel.
 
 event_time (2 .google.fhir.stu3.proto.DateTimeR	eventTime9
 source (2!.google.fhir.stu3.proto.ReferenceRsource?
-label (2).google.fhir.stu3.google.EventLabel.LabelRlabelø
+label (2).google.fhir.stu3.google.EventLabel.LabelRlabel¹
 Label.
 id (2.google.fhir.stu3.proto.StringRidE
 
 class_name (2.google.fhir.stu3.proto.CodingBðÐ‡ëR	classNamec
 class_value (24.google.fhir.stu3.google.EventLabel.Label.ClassValueBøáãÉðÐ‡ëR
-classValue’
+classValueÓ
 
 ClassValue;
 boolean (2.google.fhir.stu3.proto.BooleanH Rboolean;
 decimal (2.google.fhir.stu3.proto.DecimalH Rdecimal;
 integer (2.google.fhir.stu3.proto.IntegerH Rinteger>
-string_value (2.google.fhir.stu3.proto.StringH RstringB
+string_value (2.google.fhir.stu3.proto.StringH Rstring?
+	date_time (2 .google.fhir.stu3.proto.DateTimeH RdateTimeB
 class_value:sÀŸã¶šµŽ“1http://hl7.org/fhir/StructureDefinition/Extension²þä—0https://g.co/fhir/StructureDefinition/eventLabel"¶
 EventTrigger.
 id (2.google.fhir.stu3.proto.StringRid?

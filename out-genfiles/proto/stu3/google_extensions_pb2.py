@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='google.fhir.stu3.google',
   syntax='proto3',
   serialized_options=_b('\n\033com.google.fhir.stu3.googleP\001'),
-  serialized_pb=_b('\n\"proto/stu3/google_extensions.proto\x12\x17google.fhir.stu3.google\x1a\x1cproto/stu3/annotations.proto\x1a\x1aproto/stu3/datatypes.proto\"\xff\x02\n\x1b\x42\x61se64BinarySeparatorStride\x12*\n\x02id\x18\x01 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.String\x12\x34\n\textension\x18\x02 \x03(\x0b\x32!.google.fhir.stu3.proto.Extension\x12\x39\n\tseparator\x18\x04 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.StringB\x06\xf0\xd0\x87\xeb\x04\x01\x12;\n\x06stride\x18\x05 \x01(\x0b\x32#.google.fhir.stu3.proto.PositiveIntB\x06\xf0\xd0\x87\xeb\x04\x01:\x85\x01\xc0\x9f\xe3\xb6\x05\x02\x9a\xb5\x8e\x93\x06\x31http://hl7.org/fhir/StructureDefinition/Extension\xb2\xfe\xe4\x97\x06\x42https://g.co/fhir/StructureDefinition/base64Binary-separatorStride\"\xbd\x07\n\nEventLabel\x12*\n\x02id\x18\x01 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.String\x12\x34\n\textension\x18\x02 \x03(\x0b\x32!.google.fhir.stu3.proto.Extension\x12:\n\x07patient\x18\x04 \x01(\x0b\x32!.google.fhir.stu3.proto.ReferenceB\x06\xf0\xd0\x87\xeb\x04\x01\x12\x34\n\x04type\x18\x05 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.CodingB\x06\xf0\xd0\x87\xeb\x04\x01\x12\x34\n\nevent_time\x18\x06 \x01(\x0b\x32 .google.fhir.stu3.proto.DateTime\x12\x31\n\x06source\x18\x07 \x01(\x0b\x32!.google.fhir.stu3.proto.Reference\x12\x38\n\x05label\x18\x08 \x03(\x0b\x32).google.fhir.stu3.google.EventLabel.Label\x1a\xc2\x03\n\x05Label\x12*\n\x02id\x18\x01 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.String\x12:\n\nclass_name\x18\x04 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.CodingB\x06\xf0\xd0\x87\xeb\x04\x01\x12W\n\x0b\x63lass_value\x18\x05 \x01(\x0b\x32\x34.google.fhir.stu3.google.EventLabel.Label.ClassValueB\x0c\xf8\xe1\xe3\xc9\x05\x01\xf0\xd0\x87\xeb\x04\x01\x1a\xf7\x01\n\nClassValue\x12\x32\n\x07\x62oolean\x18\x01 \x01(\x0b\x32\x1f.google.fhir.stu3.proto.BooleanH\x00\x12\x32\n\x07\x64\x65\x63imal\x18\x02 \x01(\x0b\x32\x1f.google.fhir.stu3.proto.DecimalH\x00\x12\x32\n\x07integer\x18\x03 \x01(\x0b\x32\x1f.google.fhir.stu3.proto.IntegerH\x00\x12>\n\x0cstring_value\x18\x04 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.StringH\x00R\x06stringB\r\n\x0b\x63lass_value:s\xc0\x9f\xe3\xb6\x05\x02\x9a\xb5\x8e\x93\x06\x31http://hl7.org/fhir/StructureDefinition/Extension\xb2\xfe\xe4\x97\x06\x30https://g.co/fhir/StructureDefinition/eventLabel\"\x8e\x03\n\x0c\x45ventTrigger\x12*\n\x02id\x18\x01 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.String\x12\x34\n\textension\x18\x02 \x03(\x0b\x32!.google.fhir.stu3.proto.Extension\x12\x34\n\x04type\x18\x04 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.CodingB\x06\xf0\xd0\x87\xeb\x04\x01\x12<\n\nevent_time\x18\x05 \x01(\x0b\x32 .google.fhir.stu3.proto.DateTimeB\x06\xf0\xd0\x87\xeb\x04\x01\x12\x31\n\x06source\x18\x06 \x01(\x0b\x32!.google.fhir.stu3.proto.Reference:u\xc0\x9f\xe3\xb6\x05\x02\x9a\xb5\x8e\x93\x06\x31http://hl7.org/fhir/StructureDefinition/Extension\xb2\xfe\xe4\x97\x06\x32https://g.co/fhir/StructureDefinition/eventTrigger\"\xf7\x01\n\x13PrimitiveHasNoValue\x12*\n\x02id\x18\x01 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.String\x12\x36\n\rvalue_boolean\x18\x03 \x01(\x0b\x32\x1f.google.fhir.stu3.proto.Boolean:|\xc0\x9f\xe3\xb6\x05\x02\x9a\xb5\x8e\x93\x06\x31http://hl7.org/fhir/StructureDefinition/Extension\xb2\xfe\xe4\x97\x06\x39https://g.co/fhir/StructureDefinition/primitiveHasNoValueB\x1f\n\x1b\x63om.google.fhir.stu3.googleP\x01\x62\x06proto3')
+  serialized_pb=_b('\n\"proto/stu3/google_extensions.proto\x12\x17google.fhir.stu3.google\x1a\x1cproto/stu3/annotations.proto\x1a\x1aproto/stu3/datatypes.proto\"\xff\x02\n\x1b\x42\x61se64BinarySeparatorStride\x12*\n\x02id\x18\x01 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.String\x12\x34\n\textension\x18\x02 \x03(\x0b\x32!.google.fhir.stu3.proto.Extension\x12\x39\n\tseparator\x18\x04 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.StringB\x06\xf0\xd0\x87\xeb\x04\x01\x12;\n\x06stride\x18\x05 \x01(\x0b\x32#.google.fhir.stu3.proto.PositiveIntB\x06\xf0\xd0\x87\xeb\x04\x01:\x85\x01\xc0\x9f\xe3\xb6\x05\x02\x9a\xb5\x8e\x93\x06\x31http://hl7.org/fhir/StructureDefinition/Extension\xb2\xfe\xe4\x97\x06\x42https://g.co/fhir/StructureDefinition/base64Binary-separatorStride\"\xf4\x07\n\nEventLabel\x12*\n\x02id\x18\x01 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.String\x12\x34\n\textension\x18\x02 \x03(\x0b\x32!.google.fhir.stu3.proto.Extension\x12:\n\x07patient\x18\x04 \x01(\x0b\x32!.google.fhir.stu3.proto.ReferenceB\x06\xf0\xd0\x87\xeb\x04\x01\x12\x34\n\x04type\x18\x05 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.CodingB\x06\xf0\xd0\x87\xeb\x04\x01\x12\x34\n\nevent_time\x18\x06 \x01(\x0b\x32 .google.fhir.stu3.proto.DateTime\x12\x31\n\x06source\x18\x07 \x01(\x0b\x32!.google.fhir.stu3.proto.Reference\x12\x38\n\x05label\x18\x08 \x03(\x0b\x32).google.fhir.stu3.google.EventLabel.Label\x1a\xf9\x03\n\x05Label\x12*\n\x02id\x18\x01 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.String\x12:\n\nclass_name\x18\x04 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.CodingB\x06\xf0\xd0\x87\xeb\x04\x01\x12W\n\x0b\x63lass_value\x18\x05 \x01(\x0b\x32\x34.google.fhir.stu3.google.EventLabel.Label.ClassValueB\x0c\xf8\xe1\xe3\xc9\x05\x01\xf0\xd0\x87\xeb\x04\x01\x1a\xae\x02\n\nClassValue\x12\x32\n\x07\x62oolean\x18\x01 \x01(\x0b\x32\x1f.google.fhir.stu3.proto.BooleanH\x00\x12\x32\n\x07\x64\x65\x63imal\x18\x02 \x01(\x0b\x32\x1f.google.fhir.stu3.proto.DecimalH\x00\x12\x32\n\x07integer\x18\x03 \x01(\x0b\x32\x1f.google.fhir.stu3.proto.IntegerH\x00\x12>\n\x0cstring_value\x18\x04 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.StringH\x00R\x06string\x12\x35\n\tdate_time\x18\x05 \x01(\x0b\x32 .google.fhir.stu3.proto.DateTimeH\x00\x42\r\n\x0b\x63lass_value:s\xc0\x9f\xe3\xb6\x05\x02\x9a\xb5\x8e\x93\x06\x31http://hl7.org/fhir/StructureDefinition/Extension\xb2\xfe\xe4\x97\x06\x30https://g.co/fhir/StructureDefinition/eventLabel\"\x8e\x03\n\x0c\x45ventTrigger\x12*\n\x02id\x18\x01 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.String\x12\x34\n\textension\x18\x02 \x03(\x0b\x32!.google.fhir.stu3.proto.Extension\x12\x34\n\x04type\x18\x04 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.CodingB\x06\xf0\xd0\x87\xeb\x04\x01\x12<\n\nevent_time\x18\x05 \x01(\x0b\x32 .google.fhir.stu3.proto.DateTimeB\x06\xf0\xd0\x87\xeb\x04\x01\x12\x31\n\x06source\x18\x06 \x01(\x0b\x32!.google.fhir.stu3.proto.Reference:u\xc0\x9f\xe3\xb6\x05\x02\x9a\xb5\x8e\x93\x06\x31http://hl7.org/fhir/StructureDefinition/Extension\xb2\xfe\xe4\x97\x06\x32https://g.co/fhir/StructureDefinition/eventTrigger\"\xf7\x01\n\x13PrimitiveHasNoValue\x12*\n\x02id\x18\x01 \x01(\x0b\x32\x1e.google.fhir.stu3.proto.String\x12\x36\n\rvalue_boolean\x18\x03 \x01(\x0b\x32\x1f.google.fhir.stu3.proto.Boolean:|\xc0\x9f\xe3\xb6\x05\x02\x9a\xb5\x8e\x93\x06\x31http://hl7.org/fhir/StructureDefinition/Extension\xb2\xfe\xe4\x97\x06\x39https://g.co/fhir/StructureDefinition/primitiveHasNoValueB\x1f\n\x1b\x63om.google.fhir.stu3.googleP\x01\x62\x06proto3')
   ,
   dependencies=[proto_dot_stu3_dot_annotations__pb2.DESCRIPTOR,proto_dot_stu3_dot_datatypes__pb2.DESCRIPTOR,])
 
@@ -115,6 +115,13 @@ _EVENTLABEL_LABEL_CLASSVALUE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='string', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='date_time', full_name='google.fhir.stu3.google.EventLabel.Label.ClassValue.date_time', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -131,7 +138,7 @@ _EVENTLABEL_LABEL_CLASSVALUE = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=1101,
-  serialized_end=1348,
+  serialized_end=1403,
 )
 
 _EVENTLABEL_LABEL = _descriptor.Descriptor(
@@ -175,7 +182,7 @@ _EVENTLABEL_LABEL = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=898,
-  serialized_end=1348,
+  serialized_end=1403,
 )
 
 _EVENTLABEL = _descriptor.Descriptor(
@@ -247,7 +254,7 @@ _EVENTLABEL = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=508,
-  serialized_end=1465,
+  serialized_end=1520,
 )
 
 
@@ -305,8 +312,8 @@ _EVENTTRIGGER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1468,
-  serialized_end=1866,
+  serialized_start=1523,
+  serialized_end=1921,
 )
 
 
@@ -343,8 +350,8 @@ _PRIMITIVEHASNOVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1869,
-  serialized_end=2116,
+  serialized_start=1924,
+  serialized_end=2171,
 )
 
 _BASE64BINARYSEPARATORSTRIDE.fields_by_name['id'].message_type = proto_dot_stu3_dot_datatypes__pb2._STRING
@@ -355,6 +362,7 @@ _EVENTLABEL_LABEL_CLASSVALUE.fields_by_name['boolean'].message_type = proto_dot_
 _EVENTLABEL_LABEL_CLASSVALUE.fields_by_name['decimal'].message_type = proto_dot_stu3_dot_datatypes__pb2._DECIMAL
 _EVENTLABEL_LABEL_CLASSVALUE.fields_by_name['integer'].message_type = proto_dot_stu3_dot_datatypes__pb2._INTEGER
 _EVENTLABEL_LABEL_CLASSVALUE.fields_by_name['string_value'].message_type = proto_dot_stu3_dot_datatypes__pb2._STRING
+_EVENTLABEL_LABEL_CLASSVALUE.fields_by_name['date_time'].message_type = proto_dot_stu3_dot_datatypes__pb2._DATETIME
 _EVENTLABEL_LABEL_CLASSVALUE.containing_type = _EVENTLABEL_LABEL
 _EVENTLABEL_LABEL_CLASSVALUE.oneofs_by_name['class_value'].fields.append(
   _EVENTLABEL_LABEL_CLASSVALUE.fields_by_name['boolean'])
@@ -368,6 +376,9 @@ _EVENTLABEL_LABEL_CLASSVALUE.fields_by_name['integer'].containing_oneof = _EVENT
 _EVENTLABEL_LABEL_CLASSVALUE.oneofs_by_name['class_value'].fields.append(
   _EVENTLABEL_LABEL_CLASSVALUE.fields_by_name['string_value'])
 _EVENTLABEL_LABEL_CLASSVALUE.fields_by_name['string_value'].containing_oneof = _EVENTLABEL_LABEL_CLASSVALUE.oneofs_by_name['class_value']
+_EVENTLABEL_LABEL_CLASSVALUE.oneofs_by_name['class_value'].fields.append(
+  _EVENTLABEL_LABEL_CLASSVALUE.fields_by_name['date_time'])
+_EVENTLABEL_LABEL_CLASSVALUE.fields_by_name['date_time'].containing_oneof = _EVENTLABEL_LABEL_CLASSVALUE.oneofs_by_name['class_value']
 _EVENTLABEL_LABEL.fields_by_name['id'].message_type = proto_dot_stu3_dot_datatypes__pb2._STRING
 _EVENTLABEL_LABEL.fields_by_name['class_name'].message_type = proto_dot_stu3_dot_datatypes__pb2._CODING
 _EVENTLABEL_LABEL.fields_by_name['class_value'].message_type = _EVENTLABEL_LABEL_CLASSVALUE

@@ -1,1 +1,1 @@
-/home/rkharwar/latest/20181221/fhir/py/google/fhir/labels/label_test.py
+/home/rkharwar/fhir/py/google/fhir/labels/label_test.py

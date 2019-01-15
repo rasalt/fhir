@@ -272,6 +272,7 @@ class EventLabel_Label_ClassValue : public ::google::protobuf::Message /* @@prot
     kDecimal = 2,
     kInteger = 3,
     kStringValue = 4,
+    kDateTime = 5,
     CLASS_VALUE_NOT_SET = 0,
   };
 
@@ -381,6 +382,18 @@ class EventLabel_Label_ClassValue : public ::google::protobuf::Message /* @@prot
   ::google::fhir::stu3::proto::String* mutable_string_value();
   void set_allocated_string_value(::google::fhir::stu3::proto::String* string_value);
 
+  // .google.fhir.stu3.proto.DateTime date_time = 5;
+  bool has_date_time() const;
+  void clear_date_time();
+  static const int kDateTimeFieldNumber = 5;
+  private:
+  const ::google::fhir::stu3::proto::DateTime& _internal_date_time() const;
+  public:
+  const ::google::fhir::stu3::proto::DateTime& date_time() const;
+  ::google::fhir::stu3::proto::DateTime* release_date_time();
+  ::google::fhir::stu3::proto::DateTime* mutable_date_time();
+  void set_allocated_date_time(::google::fhir::stu3::proto::DateTime* date_time);
+
   void clear_class_value();
   ClassValueCase class_value_case() const;
   // @@protoc_insertion_point(class_scope:google.fhir.stu3.google.EventLabel.Label.ClassValue)
@@ -389,6 +402,7 @@ class EventLabel_Label_ClassValue : public ::google::protobuf::Message /* @@prot
   void set_has_decimal();
   void set_has_integer();
   void set_has_string_value();
+  void set_has_date_time();
 
   inline bool has_class_value() const;
   inline void clear_has_class_value();
@@ -400,6 +414,7 @@ class EventLabel_Label_ClassValue : public ::google::protobuf::Message /* @@prot
     ::google::fhir::stu3::proto::Decimal* decimal_;
     ::google::fhir::stu3::proto::Integer* integer_;
     ::google::fhir::stu3::proto::String* string_value_;
+    ::google::fhir::stu3::proto::DateTime* date_time_;
   } class_value_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1351,6 +1366,44 @@ inline ::google::fhir::stu3::proto::String* EventLabel_Label_ClassValue::mutable
   }
   // @@protoc_insertion_point(field_mutable:google.fhir.stu3.google.EventLabel.Label.ClassValue.string_value)
   return class_value_.string_value_;
+}
+
+// .google.fhir.stu3.proto.DateTime date_time = 5;
+inline bool EventLabel_Label_ClassValue::has_date_time() const {
+  return class_value_case() == kDateTime;
+}
+inline void EventLabel_Label_ClassValue::set_has_date_time() {
+  _oneof_case_[0] = kDateTime;
+}
+inline const ::google::fhir::stu3::proto::DateTime& EventLabel_Label_ClassValue::_internal_date_time() const {
+  return *class_value_.date_time_;
+}
+inline ::google::fhir::stu3::proto::DateTime* EventLabel_Label_ClassValue::release_date_time() {
+  // @@protoc_insertion_point(field_release:google.fhir.stu3.google.EventLabel.Label.ClassValue.date_time)
+  if (has_date_time()) {
+    clear_has_class_value();
+      ::google::fhir::stu3::proto::DateTime* temp = class_value_.date_time_;
+    class_value_.date_time_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::google::fhir::stu3::proto::DateTime& EventLabel_Label_ClassValue::date_time() const {
+  // @@protoc_insertion_point(field_get:google.fhir.stu3.google.EventLabel.Label.ClassValue.date_time)
+  return has_date_time()
+      ? *class_value_.date_time_
+      : *reinterpret_cast< ::google::fhir::stu3::proto::DateTime*>(&::google::fhir::stu3::proto::_DateTime_default_instance_);
+}
+inline ::google::fhir::stu3::proto::DateTime* EventLabel_Label_ClassValue::mutable_date_time() {
+  if (!has_date_time()) {
+    clear_class_value();
+    set_has_date_time();
+    class_value_.date_time_ = CreateMaybeMessage< ::google::fhir::stu3::proto::DateTime >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:google.fhir.stu3.google.EventLabel.Label.ClassValue.date_time)
+  return class_value_.date_time_;
 }
 
 inline bool EventLabel_Label_ClassValue::has_class_value() const {

@@ -43,6 +43,7 @@ class EventLabel_Label_ClassValueDefaultTypeInternal {
   const ::google::fhir::stu3::proto::Decimal* decimal_;
   const ::google::fhir::stu3::proto::Integer* integer_;
   const ::google::fhir::stu3::proto::String* string_value_;
+  const ::google::fhir::stu3::proto::DateTime* date_time_;
 } _EventLabel_Label_ClassValue_default_instance_;
 class EventLabel_LabelDefaultTypeInternal {
  public:
@@ -191,6 +192,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   offsetof(::google::fhir::stu3::google::EventLabel_Label_ClassValueDefaultTypeInternal, decimal_),
   offsetof(::google::fhir::stu3::google::EventLabel_Label_ClassValueDefaultTypeInternal, integer_),
   offsetof(::google::fhir::stu3::google::EventLabel_Label_ClassValueDefaultTypeInternal, string_value_),
+  offsetof(::google::fhir::stu3::google::EventLabel_Label_ClassValueDefaultTypeInternal, date_time_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::google::fhir::stu3::google::EventLabel_Label_ClassValue, class_value_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::google::fhir::stu3::google::EventLabel_Label, _internal_metadata_),
@@ -233,10 +235,10 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::google::fhir::stu3::google::Base64BinarySeparatorStride)},
   { 9, -1, sizeof(::google::fhir::stu3::google::EventLabel_Label_ClassValue)},
-  { 19, -1, sizeof(::google::fhir::stu3::google::EventLabel_Label)},
-  { 27, -1, sizeof(::google::fhir::stu3::google::EventLabel)},
-  { 39, -1, sizeof(::google::fhir::stu3::google::EventTrigger)},
-  { 49, -1, sizeof(::google::fhir::stu3::google::PrimitiveHasNoValue)},
+  { 20, -1, sizeof(::google::fhir::stu3::google::EventLabel_Label)},
+  { 28, -1, sizeof(::google::fhir::stu3::google::EventLabel)},
+  { 40, -1, sizeof(::google::fhir::stu3::google::EventTrigger)},
+  { 50, -1, sizeof(::google::fhir::stu3::google::PrimitiveHasNoValue)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -281,7 +283,7 @@ void AddDescriptorsImpl() {
       "tB\006\360\320\207\353\004\001:\205\001\300\237\343\266\005\002\232\265\216\223\0061http://hl7.org/f"
       "hir/StructureDefinition/Extension\262\376\344\227\006Bh"
       "ttps://g.co/fhir/StructureDefinition/bas"
-      "e64Binary-separatorStride\"\275\007\n\nEventLabel"
+      "e64Binary-separatorStride\"\364\007\n\nEventLabel"
       "\022*\n\002id\030\001 \001(\0132\036.google.fhir.stu3.proto.St"
       "ring\0224\n\textension\030\002 \003(\0132!.google.fhir.st"
       "u3.proto.Extension\022:\n\007patient\030\004 \001(\0132!.go"
@@ -291,41 +293,43 @@ void AddDescriptorsImpl() {
       "e.fhir.stu3.proto.DateTime\0221\n\006source\030\007 \001"
       "(\0132!.google.fhir.stu3.proto.Reference\0228\n"
       "\005label\030\010 \003(\0132).google.fhir.stu3.google.E"
-      "ventLabel.Label\032\302\003\n\005Label\022*\n\002id\030\001 \001(\0132\036."
+      "ventLabel.Label\032\371\003\n\005Label\022*\n\002id\030\001 \001(\0132\036."
       "google.fhir.stu3.proto.String\022:\n\nclass_n"
       "ame\030\004 \001(\0132\036.google.fhir.stu3.proto.Codin"
       "gB\006\360\320\207\353\004\001\022W\n\013class_value\030\005 \001(\01324.google."
       "fhir.stu3.google.EventLabel.Label.ClassV"
-      "alueB\014\370\341\343\311\005\001\360\320\207\353\004\001\032\367\001\n\nClassValue\0222\n\007boo"
+      "alueB\014\370\341\343\311\005\001\360\320\207\353\004\001\032\256\002\n\nClassValue\0222\n\007boo"
       "lean\030\001 \001(\0132\037.google.fhir.stu3.proto.Bool"
       "eanH\000\0222\n\007decimal\030\002 \001(\0132\037.google.fhir.stu"
       "3.proto.DecimalH\000\0222\n\007integer\030\003 \001(\0132\037.goo"
       "gle.fhir.stu3.proto.IntegerH\000\022>\n\014string_"
       "value\030\004 \001(\0132\036.google.fhir.stu3.proto.Str"
-      "ingH\000R\006stringB\r\n\013class_value:s\300\237\343\266\005\002\232\265\216\223"
-      "\0061http://hl7.org/fhir/StructureDefinitio"
-      "n/Extension\262\376\344\227\0060https://g.co/fhir/Struc"
-      "tureDefinition/eventLabel\"\216\003\n\014EventTrigg"
-      "er\022*\n\002id\030\001 \001(\0132\036.google.fhir.stu3.proto."
-      "String\0224\n\textension\030\002 \003(\0132!.google.fhir."
-      "stu3.proto.Extension\0224\n\004type\030\004 \001(\0132\036.goo"
-      "gle.fhir.stu3.proto.CodingB\006\360\320\207\353\004\001\022<\n\nev"
-      "ent_time\030\005 \001(\0132 .google.fhir.stu3.proto."
-      "DateTimeB\006\360\320\207\353\004\001\0221\n\006source\030\006 \001(\0132!.googl"
-      "e.fhir.stu3.proto.Reference:u\300\237\343\266\005\002\232\265\216\223\006"
-      "1http://hl7.org/fhir/StructureDefinition"
-      "/Extension\262\376\344\227\0062https://g.co/fhir/Struct"
-      "ureDefinition/eventTrigger\"\367\001\n\023Primitive"
-      "HasNoValue\022*\n\002id\030\001 \001(\0132\036.google.fhir.stu"
-      "3.proto.String\0226\n\rvalue_boolean\030\003 \001(\0132\037."
-      "google.fhir.stu3.proto.Boolean:|\300\237\343\266\005\002\232\265"
-      "\216\223\0061http://hl7.org/fhir/StructureDefinit"
-      "ion/Extension\262\376\344\227\0069https://g.co/fhir/Str"
-      "uctureDefinition/primitiveHasNoValueB\037\n\033"
-      "com.google.fhir.stu3.googleP\001b\006proto3"
+      "ingH\000R\006string\0225\n\tdate_time\030\005 \001(\0132 .googl"
+      "e.fhir.stu3.proto.DateTimeH\000B\r\n\013class_va"
+      "lue:s\300\237\343\266\005\002\232\265\216\223\0061http://hl7.org/fhir/Str"
+      "uctureDefinition/Extension\262\376\344\227\0060https://"
+      "g.co/fhir/StructureDefinition/eventLabel"
+      "\"\216\003\n\014EventTrigger\022*\n\002id\030\001 \001(\0132\036.google.f"
+      "hir.stu3.proto.String\0224\n\textension\030\002 \003(\013"
+      "2!.google.fhir.stu3.proto.Extension\0224\n\004t"
+      "ype\030\004 \001(\0132\036.google.fhir.stu3.proto.Codin"
+      "gB\006\360\320\207\353\004\001\022<\n\nevent_time\030\005 \001(\0132 .google.f"
+      "hir.stu3.proto.DateTimeB\006\360\320\207\353\004\001\0221\n\006sourc"
+      "e\030\006 \001(\0132!.google.fhir.stu3.proto.Referen"
+      "ce:u\300\237\343\266\005\002\232\265\216\223\0061http://hl7.org/fhir/Stru"
+      "ctureDefinition/Extension\262\376\344\227\0062https://g"
+      ".co/fhir/StructureDefinition/eventTrigge"
+      "r\"\367\001\n\023PrimitiveHasNoValue\022*\n\002id\030\001 \001(\0132\036."
+      "google.fhir.stu3.proto.String\0226\n\rvalue_b"
+      "oolean\030\003 \001(\0132\037.google.fhir.stu3.proto.Bo"
+      "olean:|\300\237\343\266\005\002\232\265\216\223\0061http://hl7.org/fhir/S"
+      "tructureDefinition/Extension\262\376\344\227\0069https:"
+      "//g.co/fhir/StructureDefinition/primitiv"
+      "eHasNoValueB\037\n\033com.google.fhir.stu3.goog"
+      "leP\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2157);
+      descriptor, 2212);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/stu3/google_extensions.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2fstu3_2fannotations_2eproto::AddDescriptors();
@@ -759,6 +763,8 @@ void EventLabel_Label_ClassValue::InitAsDefaultInstance() {
       ::google::fhir::stu3::proto::Integer::internal_default_instance());
   ::google::fhir::stu3::google::_EventLabel_Label_ClassValue_default_instance_.string_value_ = const_cast< ::google::fhir::stu3::proto::String*>(
       ::google::fhir::stu3::proto::String::internal_default_instance());
+  ::google::fhir::stu3::google::_EventLabel_Label_ClassValue_default_instance_.date_time_ = const_cast< ::google::fhir::stu3::proto::DateTime*>(
+      ::google::fhir::stu3::proto::DateTime::internal_default_instance());
 }
 void EventLabel_Label_ClassValue::set_allocated_boolean(::google::fhir::stu3::proto::Boolean* boolean) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -840,11 +846,32 @@ void EventLabel_Label_ClassValue::clear_string_value() {
     clear_has_class_value();
   }
 }
+void EventLabel_Label_ClassValue::set_allocated_date_time(::google::fhir::stu3::proto::DateTime* date_time) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_class_value();
+  if (date_time) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      date_time = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, date_time, submessage_arena);
+    }
+    set_has_date_time();
+    class_value_.date_time_ = date_time;
+  }
+  // @@protoc_insertion_point(field_set_allocated:google.fhir.stu3.google.EventLabel.Label.ClassValue.date_time)
+}
+void EventLabel_Label_ClassValue::clear_date_time() {
+  if (has_date_time()) {
+    delete class_value_.date_time_;
+    clear_has_class_value();
+  }
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int EventLabel_Label_ClassValue::kBooleanFieldNumber;
 const int EventLabel_Label_ClassValue::kDecimalFieldNumber;
 const int EventLabel_Label_ClassValue::kIntegerFieldNumber;
 const int EventLabel_Label_ClassValue::kStringValueFieldNumber;
+const int EventLabel_Label_ClassValue::kDateTimeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 EventLabel_Label_ClassValue::EventLabel_Label_ClassValue()
@@ -874,6 +901,10 @@ EventLabel_Label_ClassValue::EventLabel_Label_ClassValue(const EventLabel_Label_
     }
     case kStringValue: {
       mutable_string_value()->::google::fhir::stu3::proto::String::MergeFrom(from.string_value());
+      break;
+    }
+    case kDateTime: {
+      mutable_date_time()->::google::fhir::stu3::proto::DateTime::MergeFrom(from.date_time());
       break;
     }
     case CLASS_VALUE_NOT_SET: {
@@ -929,6 +960,10 @@ void EventLabel_Label_ClassValue::clear_class_value() {
     }
     case kStringValue: {
       delete class_value_.string_value_;
+      break;
+    }
+    case kDateTime: {
+      delete class_value_.date_time_;
       break;
     }
     case CLASS_VALUE_NOT_SET: {
@@ -1007,6 +1042,18 @@ bool EventLabel_Label_ClassValue::MergePartialFromCodedStream(
         break;
       }
 
+      // .google.fhir.stu3.proto.DateTime date_time = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_date_time()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1057,6 +1104,12 @@ void EventLabel_Label_ClassValue::SerializeWithCachedSizes(
       4, this->_internal_string_value(), output);
   }
 
+  // .google.fhir.stu3.proto.DateTime date_time = 5;
+  if (has_date_time()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5, this->_internal_date_time(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -1097,6 +1150,13 @@ void EventLabel_Label_ClassValue::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         4, this->_internal_string_value(), deterministic, target);
+  }
+
+  // .google.fhir.stu3.proto.DateTime date_time = 5;
+  if (has_date_time()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        5, this->_internal_date_time(), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1145,6 +1205,13 @@ size_t EventLabel_Label_ClassValue::ByteSizeLong() const {
           *class_value_.string_value_);
       break;
     }
+    // .google.fhir.stu3.proto.DateTime date_time = 5;
+    case kDateTime: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *class_value_.date_time_);
+      break;
+    }
     case CLASS_VALUE_NOT_SET: {
       break;
     }
@@ -1191,6 +1258,10 @@ void EventLabel_Label_ClassValue::MergeFrom(const EventLabel_Label_ClassValue& f
     }
     case kStringValue: {
       mutable_string_value()->::google::fhir::stu3::proto::String::MergeFrom(from.string_value());
+      break;
+    }
+    case kDateTime: {
+      mutable_date_time()->::google::fhir::stu3::proto::DateTime::MergeFrom(from.date_time());
       break;
     }
     case CLASS_VALUE_NOT_SET: {
